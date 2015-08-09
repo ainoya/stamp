@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -54,7 +55,7 @@ func NewMaterial(inputPath string, outputPath string) *material {
 }
 
 func stamp(m *material) {
-	size := fmt.Sprintf("%sx40", m.width)
+	size := fmt.Sprintf("%dx40", m.width)
 
 	cmd := exec.Command(
 		"convert",
@@ -64,7 +65,7 @@ func stamp(m *material) {
 		"-size", size,
 		m.caption,
 		m.inputPath, "+swap",
-		"-gravity", "south",
+		"-gravity", "north",
 		"-composite", m.outputPath)
 	cmd.Stderr = os.Stderr
 	data, err := cmd.Output()
@@ -103,6 +104,6 @@ func (m *material) makeCaption() {
 		fmt.Printf("invoking git-revparse: %v\n", err)
 		os.Exit(1)
 	} else {
-		m.caption = string(data)
+		m.caption = fmt.Sprintf("caption:%s", strings.Trim(string(data), "\n"))
 	}
 }
