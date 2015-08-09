@@ -14,6 +14,8 @@ func main() {
 	app.Name = "Stamp"
 	app.Usage = "Add build id to iOS icon"
 
+	app.Version = "v0.1.0"
+
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "in",
