@@ -19,7 +19,7 @@ brew install imagemagick ghostscript
 Then, download `stamp` binary:
 
 ```
-wget stamp -O /usr/local/bin/stamp
+wget https://github.com/ainoya/stamp/releases/download/v0.1.0/stamp -O /usr/local/bin/stamp
 ```
 
 
