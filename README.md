@@ -53,7 +53,7 @@ stamp --in ${orig} --out ${OUTPUT_PATH}
 done
 ```
 
-In this case, you have to locate your original app icon as named "*-origin.png". this script strip `-origin` prefix and use it as generated icon name.
+In this case, you have to locate your original app icon as named `*-origin.png`. this script strip `-origin` prefix and use it as generated icon name.
 
 for Example, if you name original icon as `icon-60@2x-origin.png`, Generated file will be named `icon-60@2x.png`, then you need to set `icon-60@2x.png` instead of `icon-60@2x-origin.png` in your App icon assets before.
 
